@@ -1,0 +1,38 @@
+schema {
+    query: PersonQuery
+    mutation: PersonMutation
+}
+
+"Information about pagination in a connection."
+type PageInfo {
+    "When paginating forwards, the cursor to continue."
+    endCursor: String
+    "When paginating forwards, are there more items?"
+    hasNextPage: Boolean!
+    "When paginating backwards, are there more items?"
+    hasPreviousPage: Boolean!
+    "When paginating backwards, the cursor to continue."
+    startCursor: String
+}
+
+type Person {
+    firstName: String!
+    lastName: String!
+}
+
+type PersonMutation {
+    "Creates a new person."
+    createPerson(createPerson: InputPerson!): Person!
+}
+
+type PersonQuery {
+    "Returns all people in the database with the given first name."
+    getPerson(firstName: String): [Person]!
+    "Returns all people in the database."
+    people: [Person]!
+}
+
+input InputPerson {
+    firstName: String!
+    lastName: String!
+}
