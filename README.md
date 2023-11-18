@@ -52,4 +52,9 @@ externalCalls = {
     }
   }
 ```
-` (parent, args, context, info)` this is how we have to get arguments from query. 
+` (parent, args, context, info)` this is how we have to get arguments from query.
+
+This is how we can consume from a graphql file instead of defining everything in the same file.
+`typeDefs = gql(fs.readFileSync(path.join("src/schema", "person-schema.graphql"), 'utf-8'));`
+
+#### -------------------------------------- END OF DOCUMENTATION------------------------------------
