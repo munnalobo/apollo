@@ -1,4 +1,4 @@
-import {PersonApi} from "../api/Person-api.js";
+import {PersonApi} from "../api/person-api.js";
 
 let personApi = new PersonApi();
 
